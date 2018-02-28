@@ -1,0 +1,118 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html .cd-hero,
+body .cd-hero,
+.cd-hero div,
+.cd-hero span,
+.cd-hero applet,
+.cd-hero object,
+.cd-hero iframe,
+.cd-hero h1,
+.cd-hero h2,
+.cd-hero h3,
+.cd-hero h4,
+.cd-hero h5,
+.cd-hero h6,
+.cd-hero p,
+.cd-hero blockquote,
+.cd-hero pre,
+.cd-hero a,
+.cd-hero abbr,
+.cd-hero acronym,
+.cd-hero address,
+.cd-hero big,
+.cd-hero cite,
+.cd-hero code,
+.cd-hero del,
+.cd-hero dfn,
+.cd-hero em,
+.cd-hero img,
+.cd-hero ins,
+.cd-hero kbd,
+.cd-hero q,
+.cd-hero s,
+.cd-hero samp,
+.cd-hero small,
+.cd-hero strike,
+.cd-hero strong,
+.cd-hero sub,
+.cd-hero sup,
+.cd-hero tt,
+.cd-hero var,
+.cd-hero b,
+.cd-hero u,
+.cd-hero i,
+.cd-hero center,
+.cd-hero dl,
+.cd-hero dt,
+.cd-hero dd,
+.cd-hero ol,
+.cd-hero ul,
+.cd-hero li,
+.cd-hero fieldset,
+.cd-hero form,
+.cd-hero label,
+.cd-hero legend,
+.cd-hero table,
+.cd-hero caption,
+.cd-hero tbody,
+.cd-hero tfoot,
+.cd-hero thead,
+.cd-hero tr,
+.cd-hero th,
+.cd-hero td,
+.cd-hero article,
+.cd-hero aside,
+.cd-hero canvas,
+.cd-hero details,
+.cd-hero embed,
+.cd-hero figure,
+.cd-hero figcaption,
+.cd-hero footer,
+.cd-hero header,
+.cd-hero hgroup,
+.cd-hero menu,
+.cd-hero nav,
+.cd-hero output,
+.cd-hero ruby,
+.cd-hero section,
+.cd-hero summary,
+.cd-hero time,
+.cd-hero mark,
+.cd-hero audio,
+.cd-hero video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+.cd-hero article, .cd-hero aside, .cd-hero details, .cd-hero figcaption, .cd-hero figure,
+.cd-hero footer, .cd-hero header, .cd-hero hgroup, .cd-hero menu, .cd-hero nav, .cd-hero section, .cd-hero main {
+	display: block;
+}
+body .cd-hero {
+	line-height: 1;
+}
+.cd-hero ol, .cd-hero ul {
+	list-style: none;
+}
+.cd-hero blockquote, .cd-hero q {
+	quotes: none;
+}
+.cd-hero blockquote:before, .cd-hero blockquote:after,
+.cd-hero q:before, .cd-hero q:after {
+	content: '';
+	content: none;
+}
+.cd-hero table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}

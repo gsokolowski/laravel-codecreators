@@ -1,0 +1,11 @@
+header.masthead {
+    height: 500px;
+}
+
+#mainNav.is-fixed {
+    top: -49px;
+}
+
+section.cd-hero {
+    margin-bottom: 50px;
+}
