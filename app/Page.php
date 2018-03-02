@@ -12,7 +12,7 @@ class Page extends Model
         return $this->belongsTo('App\User', 'author_id');
     }
 
-    public static function findBySlug($slug) {
+    public function findBySlug($slug) {
         return static::where([
             'slug' => $slug,
             'status' => 'active'

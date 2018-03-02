@@ -40,7 +40,7 @@
       @yield('content')
     </div>
 
-    <hr>
+    {{--<hr>--}}
 
     <!-- Footer -->
     @include('partials.footer')

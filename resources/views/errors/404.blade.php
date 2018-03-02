@@ -10,7 +10,7 @@
                 <div class="col-lg-8 col-md-10 mx-auto">
                     <div class="post-heading">
                         <h1>404 error</h1>
-                        <h2 class="subheading">We cant find that page</h2>
+                        <h2 class="subheading">We can't find that page</h2>
                     </div>
                 </div>
             </div>

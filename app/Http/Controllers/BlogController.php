@@ -21,7 +21,10 @@ class BlogController extends Controller
         ])->orderBy('id', 'desc')->get();
 
 
-        return view('posts.index', ['posts' => $posts]);
+        return view('posts.index', [
+            'posts' => $posts,
+            'backgroundImg'=>'/img/home-bg.jpg'
+            ]);
     }
 
      // calling static show
@@ -43,5 +46,40 @@ class BlogController extends Controller
         return view('posts.show', ['post'=>$post]);
     }
 
+    public function php() {
+        $posts = Post::where([
+            'category_id' => '1'
+        ])->orderBy('id', 'desc')->get();
+
+        return view('posts.index', [
+            'posts' => $posts,
+            'backgroundImg'=>'/img/php-bg.jpg'
+        ]);
+
+    }
+
+    public function laravel() {
+        $posts = Post::where([
+            'category_id' => '3'
+        ])->orderBy('id', 'desc')->get();
+
+        return view('posts.index', [
+            'posts' => $posts,
+            'backgroundImg'=>'/img/php-bg.jpg'
+        ]);
+
+    }
+
+    public function angular() {
+        $posts = Post::where([
+            'category_id' => '2'
+        ])->orderBy('id', 'desc')->get();
+
+        return view('posts.index', [
+            'posts' => $posts,
+            'backgroundImg'=>'/img/php-bg.jpg'
+        ]);
+
+    }
 
 }

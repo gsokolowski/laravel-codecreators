@@ -11,9 +11,6 @@
                     <div class="site-heading">
                         <h1>{{ $page->title }}</h1>
                         <h2 class="subheading">{{ $page->sub_title }}</h2>
-                        <span class="meta">Posted by
-                             <a href="#">{{ $page->user->name }}</a>
-                            on {{ $page->created_at->format('F d, Y') }}</span>
                     </div>
                 </div>
             </div>
@@ -23,15 +20,28 @@
 
 @section('content')
 
-
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
+
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                @if ($posted)
+                    <h2> Thank for your interest, <br>your massage has been delivered.</h2>
+                @else
+
                 <h2 class="subheading">{{ $page->excerpt }}</h2>
                 {!! $page->body !!}
 
-
-                <form name="sentMessage" id="contactForm" novalidate action="contactform" method="post">
+                <form name="sentMessage" id="contactForm" novalidate action="contact" method="post">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
@@ -67,7 +77,7 @@
                         <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
                     </div>
                 </form>
-
+                @endif
             </div>
         </div>
     </div>
