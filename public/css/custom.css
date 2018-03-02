@@ -1,11 +1,31 @@
-header.masthead {
+header.masthead,
+header.masthead .container,
+header.masthead .container .row,
+header.masthead .container .site-heading {
     height: 500px;
 }
 
 #mainNav.is-fixed {
-    top: -49px;
+    top: -50px;
 }
 
 section.cd-hero {
     margin-bottom: 50px;
+}
+
+.img-card {
+    padding-left: 15px;
+    width: 120px;
+    height: 150px;
+    float: right;
+}
+
+.post-preview {
+    padding-bottom: 30px;
+}
+.card-border {
+    min-height: 222px;
+    padding: 30px;
+    border-radius: 5px;
+    border: 1px rgba(0, 0, 0, 0.05) solid;
 }

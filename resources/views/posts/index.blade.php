@@ -5,10 +5,15 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="col-lg-8 col-md-8 mx-auto">
                     <div class="site-heading">
                         <h1>{{ setting('site.title') }}</h1>
                         <span class="subheading">{{ setting('site.description') }}</span>
+                        <div id="logo">
+                            <a href="#about" class="btn js-scroll-trigger bounce">
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -17,15 +22,13 @@
 @stop
 
 @section('content')
+<section id="about">
 <div class="row">
-    <div class="col-lg-8 col-md-10 mx-auto">
 
         @foreach ($posts as $post)
             @include('partials.post', ['post' => $post])
         @endforeach
 
-        <!-- Paginate -->
-        {{ $posts->links('vendor.pagination.bootstrap-4')}}
-    </div>
 </div>
+</section>
 @stop

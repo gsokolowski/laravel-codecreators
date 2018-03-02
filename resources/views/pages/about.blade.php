@@ -3,12 +3,12 @@
 @section('title', ' - '.$page->title)
 
 @section('header')
-    <header class="masthead" style="background-image: url('/img/about-bg.jpg')">
+    <header class="masthead" style="background-image: url('/img/about-bg.jpg'); background-position: 0px -50px; background-size: 100% 110%;">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-10 mx-auto">
-                    <div class="site-heading">
+                    <div class="site-heading pull-right">
                         <h1>{{ $page->title }}</h1>
                         <h2 class="subheading">{{ $page->sub_title }}</h2>
                         <span class="meta">Posted by
@@ -23,8 +23,6 @@
 
 
 @section('content')
-
-
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
