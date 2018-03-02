@@ -3,7 +3,7 @@
         <a href="/posts/{{$post->id}}">
             <img src="/img/about-bg.jpg" class="img-card">
             <h2 class="post-title">
-                {{ $post->title }}
+                {{ $post->title }} ({{ $post->category->name }})
             </h2>
             <h3 class="post-subtitle">
                 {{ $post->excerpt }}

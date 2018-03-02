@@ -9,8 +9,8 @@
                     <div class="site-heading">
                         <h1>{{ setting('site.title') }}</h1>
                         <span class="subheading">{{ setting('site.description') }}</span>
-                        <div id="logo">
-                            <a href="#about" class="btn js-scroll-trigger bounce">
+                        <div id="logo" class="bounce">
+                            <a href="#about" class="js-scroll-trigger">
                                 <i class="fa fa-angle-down"></i>
                             </a>
                         </div>

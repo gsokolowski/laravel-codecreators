@@ -12,9 +12,14 @@ class BlogController extends Controller
         // $posts = Post::all();
         // $posts = Post::paginate(2);
 
+//        $posts = Post::where([
+//            'status' => 'PUBLISHED'
+//        ])->orderBy('id', 'desc')->paginate(3);
+
         $posts = Post::where([
             'status' => 'PUBLISHED'
-        ])->orderBy('id', 'desc')->paginate(3);
+        ])->orderBy('id', 'desc')->get();
+
 
         return view('posts.index', ['posts' => $posts]);
     }
