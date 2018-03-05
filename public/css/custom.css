@@ -23,9 +23,21 @@ section.cd-hero {
     border-color: #003002;
 }
 
+.post-preview span {
+    color: #73858e;
+    font-size: 12px;
+    border: 1px solid #73858e;
+    padding: 3px;
+    margin-right: 6px;
+}
+
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active {
     background-color: #003002 !important;
     border-color: #003002 !important;
+}
+
+.profile-img{
+    width: 30px;
 }

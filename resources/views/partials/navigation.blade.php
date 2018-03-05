@@ -6,10 +6,7 @@
             <i class="fa fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-
             {{menu('web', 'menus.web')}}
-
-
         </div>
     </div>
 </nav>

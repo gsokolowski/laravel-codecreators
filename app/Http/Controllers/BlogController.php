@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Post;
 use Illuminate\Http\Request;
 
@@ -20,6 +21,11 @@ class BlogController extends Controller
             'status' => 'PUBLISHED'
         ])->orderBy('id', 'desc')->get();
 
+// many to many
+//        $post = Post::find(1);
+//        foreach ( $post->categories as $category) {
+//            print_r($category->name);
+//        }
 
         return view('posts.index', [
             'posts' => $posts,
@@ -46,38 +52,51 @@ class BlogController extends Controller
         return view('posts.show', ['post'=>$post]);
     }
 
-    public function php() {
-        $posts = Post::where([
-            'category_id' => '1'
-        ])->orderBy('id', 'desc')->get();
+    public function php(Category $category) {
+//        $posts = Post::where([
+//            'category_id' => '1'
+//        ])->orderBy('id', 'desc')->get();
+
+
+        $cat = $category->findBySlug('php');
+
+//        foreach ( $cat->posts as $post) {
+//            print_r($post->title);
+//        }
 
         return view('posts.index', [
-            'posts' => $posts,
+            'posts' => $cat->posts, // you have here all posts related to the category
             'backgroundImg'=>'/img/php-bg.jpg'
         ]);
 
     }
 
-    public function laravel() {
-        $posts = Post::where([
-            'category_id' => '3'
-        ])->orderBy('id', 'desc')->get();
+    public function laravel(Category $category) {
+
+//        $posts = Post::where([
+//            'category_id' => '3'
+//        ])->orderBy('id', 'desc')->get();
+
+        $cat = $category->findBySlug('laravel');
 
         return view('posts.index', [
-            'posts' => $posts,
-            'backgroundImg'=>'/img/php-bg.jpg'
+            'posts' => $cat->posts,
+            'backgroundImg'=>'/img/laravel-bg.jpg'
         ]);
 
     }
 
-    public function angular() {
-        $posts = Post::where([
-            'category_id' => '2'
-        ])->orderBy('id', 'desc')->get();
+    public function angular(Category $category) {
+
+//        $posts = Post::where([
+//            'category_id' => '2'
+//        ])->orderBy('id', 'desc')->get();
+
+        $cat = $category->findBySlug('angular');
 
         return view('posts.index', [
-            'posts' => $posts,
-            'backgroundImg'=>'/img/php-bg.jpg'
+            'posts' => $cat->posts,
+            'backgroundImg'=>'/img/angular-bg.jpg'
         ]);
 
     }

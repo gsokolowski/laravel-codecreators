@@ -10,5 +10,10 @@
     <p class="post-meta">Posted by
         <a href="#">{{ $post->user->name }}</a>
         on {{ $post->created_at->format('F d, Y') }}</p>
+
+
+    @foreach($post->categories as $category)
+        <span>{{ $category->name }}</span>
+    @endforeach
 </div>
 <hr>
