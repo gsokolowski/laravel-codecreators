@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Input;
 
 /* Moje routes */
 Route::get('/', "BlogController@index");
-Route::get('/posts', "BlogController@index");
-Route::get('/posts/{post}', "BlogController@show");
+Route::get('/articles', "BlogController@index");
+Route::get('/articles/{article}', "BlogController@show");
 
 Route::get('/about', "PageController@about");
 Route::get('/contact', "PageController@contact");

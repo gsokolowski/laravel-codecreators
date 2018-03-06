@@ -16,9 +16,9 @@ class Post extends Model
 //        return $this->belongsTo('App\Category', 'category_id');
 //    }
 
-    public function categories() {
-        return $this->belongsToMany('App\Category', 'categories_posts', 'post_id', 'category_id');
-    }
+//    public function categories() {
+//        return $this->belongsToMany('App\Category', 'categories_posts', 'post_id', 'category_id');
+//    }
 
 
 //    public function findBySlug($slug) {

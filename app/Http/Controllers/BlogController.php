@@ -3,69 +3,54 @@
 namespace App\Http\Controllers;
 
 use App\Category;
-use App\Post;
+use App\Article;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
     public function index() {
 
-        // $posts = Post::all();
-        // $posts = Post::paginate(2);
+        // $articles = Article::all();
+        // $articles = Article::paginate(2);
 
-//        $posts = Post::where([
+//        $articles = Article::where([
 //            'status' => 'PUBLISHED'
 //        ])->orderBy('id', 'desc')->paginate(3);
 
-        $posts = Post::where([
+        $articles = Article::where([
             'status' => 'PUBLISHED'
         ])->orderBy('id', 'desc')->get();
 
 // many to many
-//        $post = Post::find(1);
-//        foreach ( $post->categories as $category) {
+//        $article = Article::find(1);
+//        foreach ( $article->categories as $category) {
 //            print_r($category->name);
 //        }
+//        dd();
 
-        return view('posts.index', [
-            'posts' => $posts,
+        return view('articles.index', [
+            'articles' => $articles,
             'backgroundImg'=>'/img/home-bg.jpg'
             ]);
     }
 
-     // calling static show
-//    public static function show($slug) {
-//        $post = Post::findBySlugStatic($slug);
-//        return view('post.show', ['post'=>$post]);
-//    }
 
-      // Basic version
-//    public function show($id) {
-//
-//        $post = Post::findOrFail($id);
-//        return view('post.show', ['post'=>$post]);
-//    }
+    public function show(Article $article) {
 
-    // Short version
-    public function show(Post $post) {
-
-        return view('posts.show', ['post'=>$post]);
+        return view('articles.show', ['article'=>$article]);
     }
 
     public function php(Category $category) {
-//        $posts = Post::where([
-//            'category_id' => '1'
-//        ])->orderBy('id', 'desc')->get();
-
 
         $cat = $category->findBySlug('php');
 
-//        foreach ( $cat->posts as $post) {
-//            print_r($post->title);
+// many to many
+//        foreach ( $cat->articles as $article) {
+//            print_r($article->title);
 //        }
-
-        return view('posts.index', [
-            'posts' => $cat->posts, // you have here all posts related to the category
+//        dd();
+        return view('articles.index', [
+            'articles' => $cat->articles, // you have here all articles related to the category
             'backgroundImg'=>'/img/php-bg.jpg'
         ]);
 
@@ -73,14 +58,10 @@ class BlogController extends Controller
 
     public function laravel(Category $category) {
 
-//        $posts = Post::where([
-//            'category_id' => '3'
-//        ])->orderBy('id', 'desc')->get();
-
         $cat = $category->findBySlug('laravel');
 
-        return view('posts.index', [
-            'posts' => $cat->posts,
+        return view('articles.index', [
+            'articles' => $cat->articles,
             'backgroundImg'=>'/img/laravel-bg.jpg'
         ]);
 
@@ -88,14 +69,10 @@ class BlogController extends Controller
 
     public function angular(Category $category) {
 
-//        $posts = Post::where([
-//            'category_id' => '2'
-//        ])->orderBy('id', 'desc')->get();
-
         $cat = $category->findBySlug('angular');
 
-        return view('posts.index', [
-            'posts' => $cat->posts,
+        return view('articles.index', [
+            'articles' => $cat->articles,
             'backgroundImg'=>'/img/angular-bg.jpg'
         ]);
 
